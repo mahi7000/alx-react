@@ -1,5 +1,5 @@
 {
-  "homepage": "https://mahi7000.github.io/alx-react/task_4/dashboard",
+  "homepage": "https://mahi7000.github.io/alx-react/0x01-react_intro/task_4/dashboard",
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -b gh-pages",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,7 +41,6 @@
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.8",
-    "gh-pages": "^6.2.0",
-    "react-test-renderer": "^18.3.1"
+    "gh-pages": "^6.2.0"
   }
 }
