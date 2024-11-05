@@ -1,12 +1,62 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: {
-        main: path.resolve(__dirname, './js/dashboard_main.js'),
+        header: {
+          import: './modules/header/header.js',
+          dependOn: 'shared',
+        },
+        body: {
+          import: './modules/body/body.js',
+          dependOn: 'shared',
+        },
+        footer: {
+          import: './modules/footer/footer.js',
+          dependOn: 'shared',
+        },
+        shared: 'jquery',
     },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js',
-    }
+        filename: '[name].bundle.js',
+    },
+    optimization: {
+        splitChunks: {
+          chunks: 'all',
+        },
+      },
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpg|svg|jpeg|gif)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true,
+                            disable: true,
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+          title: 'Holberton Dashboard',
+          template: './index.html'
+        }),
+        new CleanWebpackPlugin()
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        open: true,
+        port: 8564
+    },
 };
