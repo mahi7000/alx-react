@@ -12,11 +12,14 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "build": {
+    "shouldUseSourceMap": false
+  },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build --output-path=app",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "deploy": "gh-pages -d app",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
