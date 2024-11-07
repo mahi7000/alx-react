@@ -1,5 +1,5 @@
 const path = require('path');
-const { EvalDevToolModulePlugin } = require('webpack');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: 'development',
@@ -28,6 +28,11 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.(js|jsx)$/i,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
         ],
     },
     devtool: 'inline-source-map',
@@ -37,5 +42,12 @@ module.exports = {
         open: true,
         hot: true,
         port: 8564,
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            name: "index.html",
+            inject: false,
+            template: "../dist/index.html"
+        }),
+    ],
 };
