@@ -10,6 +10,14 @@
     display: flex;
 }
 
+li[data-priority = "default"] {
+    color: blue;
+}
+
+li[data-priority="urgent"] {
+    color: red;
+}
+
 ul {   
     display: block;
 }

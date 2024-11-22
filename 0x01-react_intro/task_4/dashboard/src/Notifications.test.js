@@ -1,19 +1,24 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import './setupTests';
+import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 
-test('Notifications renders without crashing', () => {
-    render(<Notifications />);
-});
+describe('Notifications component', () => {
+    let wrapper;
 
-test('Notifications renders three list items', () => {
-    const { getAllByRole } = render(<Notifications />);
-    const listItems = getAllByRole('listitem');
-    expect(listItems.length).toBe(3);
-});
+    beforeEach(() => {
+        wrapper = shallow(<Notifications />);
+    });
 
-test('Notifications renders the text Here is the list of notifications', () => {
-    const { getByText } = render(<Notifications />);
-    const message = getByText('Here is the list of notifications');
-    expect(message).toBeInTheDocument();
+    it('renders without crashing', () => {
+        expect(wrapper.exists()).toBe(true);
+    });
+
+    it('renders three list items', () => {
+        expect(wrapper.find('li').length).toBe(3);
+    });
+
+    it('renders text in p', () => {
+        expect(wrapper.find('.Notifications p').text()).toBe('Here is the list of notifications');
+    });
 });
