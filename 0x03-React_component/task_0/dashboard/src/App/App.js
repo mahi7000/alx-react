@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -9,7 +9,7 @@ import { getLatestNotification } from '../utils/utils';
 
 import PropTypes from 'prop-types';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.listCourses = [
