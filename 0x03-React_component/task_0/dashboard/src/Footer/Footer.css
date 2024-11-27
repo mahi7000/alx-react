@@ -1,0 +1,4 @@
+.App-footer {
+    border-top: 1.5px solid var(--primary-color);
+    font-style: italic;
+}
