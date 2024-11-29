@@ -1,0 +1,20 @@
+.styled-table {
+    width: 100%;
+    border: 1px solid;
+}
+
+/* Table header styles */
+.styled-table thead th {
+    padding: 10px;
+    border-bottom: 1px solid;
+    text-align: left;
+}
+
+/* Table body styles */
+.styled-table tbody tr {
+    border-bottom: 1px solid;
+}
+
+.styled-table tbody td {
+    padding: 10px;
+}
