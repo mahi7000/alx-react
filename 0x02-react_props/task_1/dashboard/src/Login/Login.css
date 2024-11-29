@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #e01d3f;
+    --font-fam: Calibri;
+}
+
+body {
+    font-family: var(--font-fam);
+}
+  
+.App-body {
+    min-height: 400px;
+    text-align: start;
+    padding: 20px 40px;
+}

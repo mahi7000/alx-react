@@ -7,7 +7,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist/')
     },
-    modules: {
+    module: {
         rules: [
             {
                 test: /\.css$/i,
@@ -26,14 +26,22 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.(js|jsx)$/i,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
         ],
+    },
+    resolve: {
+        extensions: ['*', '.js'],
     },
     devtool: 'inline-source-map',
     devServer: {
         static: {
             directory: path.join(__dirname, '../dist'),
         },
-        compact: true,
+        compress: true,
         open: true,
         hot: true,
         port: 8564,

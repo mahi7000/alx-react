@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #e01d3f;
+    --font-fam: Calibri;
+}
+
+.App-header {
+    display: flex;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 20px;
+}
+  
+.App-header img {
+    width: 200px;
+}
